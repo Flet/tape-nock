@@ -1,0 +1,37 @@
+[
+    {
+        "scope": "http://registry.npmjs.org:80",
+        "method": "GET",
+        "path": "/",
+        "body": "",
+        "status": 200,
+        "response": {
+            "db_name": "registry",
+            "doc_count": 268310,
+            "doc_del_count": 358,
+            "update_seq": 2015452,
+            "purge_seq": 0,
+            "compact_running": false,
+            "disk_size": 1258639483,
+            "data_size": 973248921,
+            "instance_start_time": "1435359694330348",
+            "disk_format_version": 6,
+            "committed_update_seq": 2015452
+        },
+        "headers": {
+            "server": "CouchDB/1.5.0 (Erlang OTP/R16B03)",
+            "content-type": "text/plain",
+            "cache-control": "max-age=300",
+            "content-length": "261",
+            "accept-ranges": "bytes",
+            "date": "Wed, 10 Feb 2016 21:32:29 GMT",
+            "via": "1.1 varnish",
+            "x-served-by": "cache-dfw1834-DFW",
+            "x-cache": "MISS",
+            "x-cache-hits": "0",
+            "x-timer": "S1455139949.707762,VS0,VE60",
+            "connection": "close",
+            "age": "13"
+        }
+    }
+]

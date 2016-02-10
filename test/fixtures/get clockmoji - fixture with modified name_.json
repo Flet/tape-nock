@@ -1,0 +1,31 @@
+[
+    {
+        "scope": "http://registry.npmjs.org:80",
+        "method": "GET",
+        "path": "/clockmoji",
+        "body": "",
+        "status": 200,
+        "response": {
+            "_id": "clockmoji",
+            "_rev": "6-a8639d0ea6fac4660c1b3ca56a444d86",
+            "name": "IMPOSTER!"
+        },
+        "headers": {
+            "server": "CouchDB/1.5.0 (Erlang OTP/R16B03)",
+            "etag": "\"8DEGRS18ILIFXKAQ6V87JNK8H\"",
+            "content-type": "application/json",
+            "cache-control": "max-age=300",
+            "content-length": "8910",
+            "accept-ranges": "bytes",
+            "date": "Wed, 10 Feb 2016 21:32:41 GMT",
+            "via": "1.1 varnish",
+            "age": "46",
+            "x-served-by": "cache-dfw1833-DFW",
+            "x-cache": "HIT",
+            "x-cache-hits": "5",
+            "x-timer": "S1455139961.892472,VS0,VE0",
+            "vary": "Accept",
+            "connection": "close"
+        }
+    }
+]

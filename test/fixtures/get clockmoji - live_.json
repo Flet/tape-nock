@@ -1,0 +1,377 @@
+[
+    {
+        "scope": "http://registry.npmjs.org:80",
+        "method": "GET",
+        "path": "/clockmoji",
+        "body": "",
+        "status": 200,
+        "response": {
+            "_id": "clockmoji",
+            "_rev": "6-a8639d0ea6fac4660c1b3ca56a444d86",
+            "name": "clockmoji",
+            "description": "Get an emoji clock representation of the current time.",
+            "dist-tags": {
+                "latest": "1.0.4"
+            },
+            "versions": {
+                "1.0.0": {
+                    "name": "clockmoji",
+                    "description": "Get an emoji clock representation of the current time.",
+                    "version": "1.0.0",
+                    "author": {
+                        "name": "Dan Flettre",
+                        "email": "fletd01@yahoo.com"
+                    },
+                    "bin": {
+                        "clockmoji": "bin/cmd.js"
+                    },
+                    "bugs": {
+                        "url": "https://github.com/Flet/clockmoji/issues"
+                    },
+                    "devDependencies": {
+                        "standard": "*",
+                        "tap-spec": "^3.0.0",
+                        "tape": "^4.0.0"
+                    },
+                    "homepage": "https://github.com/Flet/clockmoji",
+                    "keywords": [
+                        "emoji",
+                        "clock",
+                        "command",
+                        "line"
+                    ],
+                    "license": "ISC",
+                    "main": "index.js",
+                    "repository": {
+                        "type": "git",
+                        "url": "git+https://github.com/Flet/clockmoji.git"
+                    },
+                    "scripts": {
+                        "test": "standard && tape test/*.js | tap-spec"
+                    },
+                    "dependencies": {
+                        "get-stdin": "^4.0.1"
+                    },
+                    "gitHead": "d68d34316f074422e9257508c22067e478859b4f",
+                    "_id": "clockmoji@1.0.0",
+                    "_shasum": "46429fe6e4a145449cd75d24cba50306cf4f1ca2",
+                    "_from": ".",
+                    "_npmVersion": "2.8.4",
+                    "_nodeVersion": "0.12.2",
+                    "_npmUser": {
+                        "name": "flet",
+                        "email": "flettre@gmail.com"
+                    },
+                    "maintainers": [
+                        {
+                            "name": "flet",
+                            "email": "flettre@gmail.com"
+                        }
+                    ],
+                    "dist": {
+                        "shasum": "46429fe6e4a145449cd75d24cba50306cf4f1ca2",
+                        "tarball": "http://registry.npmjs.org/clockmoji/-/clockmoji-1.0.0.tgz"
+                    },
+                    "directories": {}
+                },
+                "1.0.1": {
+                    "name": "clockmoji",
+                    "description": "Get an emoji clock representation of the current time.",
+                    "version": "1.0.1",
+                    "author": {
+                        "name": "Dan Flettre",
+                        "email": "fletd01@yahoo.com"
+                    },
+                    "bin": {
+                        "clockmoji": "bin/cmd.js"
+                    },
+                    "bugs": {
+                        "url": "https://github.com/Flet/clockmoji/issues"
+                    },
+                    "devDependencies": {
+                        "standard": "*",
+                        "tap-spec": "^3.0.0",
+                        "tape": "^4.0.0"
+                    },
+                    "homepage": "https://github.com/Flet/clockmoji",
+                    "keywords": [
+                        "emoji",
+                        "clock",
+                        "command",
+                        "line"
+                    ],
+                    "license": "ISC",
+                    "main": "index.js",
+                    "repository": {
+                        "type": "git",
+                        "url": "git+https://github.com/Flet/clockmoji.git"
+                    },
+                    "scripts": {
+                        "test": "standard && tape test/*.js | tap-spec"
+                    },
+                    "dependencies": {
+                        "get-stdin": "^4.0.1"
+                    },
+                    "gitHead": "099f8bcd4547af87cba0f276ade0f5e153dccf87",
+                    "_id": "clockmoji@1.0.1",
+                    "_shasum": "688786a641b25ae3a3956a81935f67bf93038d3d",
+                    "_from": ".",
+                    "_npmVersion": "2.8.4",
+                    "_nodeVersion": "0.12.2",
+                    "_npmUser": {
+                        "name": "flet",
+                        "email": "flettre@gmail.com"
+                    },
+                    "maintainers": [
+                        {
+                            "name": "flet",
+                            "email": "flettre@gmail.com"
+                        }
+                    ],
+                    "dist": {
+                        "shasum": "688786a641b25ae3a3956a81935f67bf93038d3d",
+                        "tarball": "http://registry.npmjs.org/clockmoji/-/clockmoji-1.0.1.tgz"
+                    },
+                    "directories": {}
+                },
+                "1.0.2": {
+                    "name": "clockmoji",
+                    "description": "Get an emoji clock representation of the current time.",
+                    "version": "1.0.2",
+                    "author": {
+                        "name": "Dan Flettre",
+                        "email": "fletd01@yahoo.com"
+                    },
+                    "bin": {
+                        "clockmoji": "bin/cmd.js"
+                    },
+                    "bugs": {
+                        "url": "https://github.com/Flet/clockmoji/issues"
+                    },
+                    "devDependencies": {
+                        "standard": "*",
+                        "tap-spec": "^3.0.0",
+                        "tape": "^4.0.0"
+                    },
+                    "homepage": "https://github.com/Flet/clockmoji",
+                    "keywords": [
+                        "emoji",
+                        "clock",
+                        "command",
+                        "line"
+                    ],
+                    "license": "ISC",
+                    "main": "index.js",
+                    "repository": {
+                        "type": "git",
+                        "url": "git+https://github.com/Flet/clockmoji.git"
+                    },
+                    "scripts": {
+                        "test": "standard && tape test/*.js | tap-spec"
+                    },
+                    "dependencies": {
+                        "get-stdin": "^4.0.1"
+                    },
+                    "gitHead": "b08053dd712380d74a1371909c3f1d78990baa5c",
+                    "_id": "clockmoji@1.0.2",
+                    "_shasum": "c5933852e99e88a841e21577e15d0c3389f37336",
+                    "_from": ".",
+                    "_npmVersion": "2.9.0",
+                    "_nodeVersion": "2.0.1",
+                    "_npmUser": {
+                        "name": "flet",
+                        "email": "flettre@gmail.com"
+                    },
+                    "maintainers": [
+                        {
+                            "name": "flet",
+                            "email": "flettre@gmail.com"
+                        }
+                    ],
+                    "dist": {
+                        "shasum": "c5933852e99e88a841e21577e15d0c3389f37336",
+                        "tarball": "http://registry.npmjs.org/clockmoji/-/clockmoji-1.0.2.tgz"
+                    },
+                    "directories": {}
+                },
+                "1.0.3": {
+                    "name": "clockmoji",
+                    "description": "Get an emoji clock representation of the current time.",
+                    "version": "1.0.3",
+                    "author": {
+                        "name": "Dan Flettre",
+                        "email": "fletd01@yahoo.com"
+                    },
+                    "bin": {
+                        "clockmoji": "bin/cmd.js"
+                    },
+                    "bugs": {
+                        "url": "https://github.com/Flet/clockmoji/issues"
+                    },
+                    "devDependencies": {
+                        "standard": "*",
+                        "tap-spec": "^4.1.0",
+                        "tape": "^4.0.0"
+                    },
+                    "homepage": "https://github.com/Flet/clockmoji",
+                    "keywords": [
+                        "emoji",
+                        "clock",
+                        "command",
+                        "line"
+                    ],
+                    "license": "ISC",
+                    "main": "index.js",
+                    "repository": {
+                        "type": "git",
+                        "url": "git+https://github.com/Flet/clockmoji.git"
+                    },
+                    "scripts": {
+                        "test": "standard && tape test/*.js | tap-spec"
+                    },
+                    "dependencies": {
+                        "get-stdin": "^5.0.0"
+                    },
+                    "gitHead": "6a0e6224c94365bd5066adf61b8723bd55a87206",
+                    "_id": "clockmoji@1.0.3",
+                    "_shasum": "9d9212ddf920baf1d8f77a6bc9b920328be67b08",
+                    "_from": ".",
+                    "_npmVersion": "3.3.7",
+                    "_nodeVersion": "4.1.2",
+                    "_npmUser": {
+                        "name": "flet",
+                        "email": "flettre@gmail.com"
+                    },
+                    "dist": {
+                        "shasum": "9d9212ddf920baf1d8f77a6bc9b920328be67b08",
+                        "tarball": "http://registry.npmjs.org/clockmoji/-/clockmoji-1.0.3.tgz"
+                    },
+                    "maintainers": [
+                        {
+                            "name": "flet",
+                            "email": "flettre@gmail.com"
+                        }
+                    ],
+                    "directories": {}
+                },
+                "1.0.4": {
+                    "name": "clockmoji",
+                    "description": "Get an emoji clock representation of the current time.",
+                    "version": "1.0.4",
+                    "author": {
+                        "name": "Dan Flettre",
+                        "email": "fletd01@yahoo.com"
+                    },
+                    "bin": {
+                        "clockmoji": "bin/cmd.js"
+                    },
+                    "bugs": {
+                        "url": "https://github.com/Flet/clockmoji/issues"
+                    },
+                    "devDependencies": {
+                        "standard": "*",
+                        "tap-spec": "^4.1.0",
+                        "tape": "^4.0.0"
+                    },
+                    "homepage": "https://github.com/Flet/clockmoji",
+                    "keywords": [
+                        "emoji",
+                        "clock",
+                        "command",
+                        "line"
+                    ],
+                    "license": "ISC",
+                    "main": "index.js",
+                    "repository": {
+                        "type": "git",
+                        "url": "git+https://github.com/Flet/clockmoji.git"
+                    },
+                    "scripts": {
+                        "test": "standard && tape test/*.js | tap-spec"
+                    },
+                    "dependencies": {
+                        "get-stdin": "^5.0.1"
+                    },
+                    "gitHead": "b78ed97208017bc16ce86848d03227e44e78f5a8",
+                    "_id": "clockmoji@1.0.4",
+                    "_shasum": "41643d1f2f13df74b408530e24aa4b32932c0fc0",
+                    "_from": ".",
+                    "_npmVersion": "3.3.12",
+                    "_nodeVersion": "4.2.2",
+                    "_npmUser": {
+                        "name": "flet",
+                        "email": "flettre@gmail.com"
+                    },
+                    "dist": {
+                        "shasum": "41643d1f2f13df74b408530e24aa4b32932c0fc0",
+                        "tarball": "http://registry.npmjs.org/clockmoji/-/clockmoji-1.0.4.tgz"
+                    },
+                    "maintainers": [
+                        {
+                            "name": "flet",
+                            "email": "flettre@gmail.com"
+                        }
+                    ],
+                    "directories": {}
+                }
+            },
+            "readme": "# clockmoji\n\n[![npm][npm-image]][npm-url]\n[![travis][travis-image]][travis-url]\n\n[npm-image]: https://img.shields.io/npm/v/clockmoji.svg?style=flat-square\n[npm-url]: https://www.npmjs.com/package/clockmoji\n[travis-image]: https://img.shields.io/travis/Flet/clockmoji.svg?style=flat-square\n[travis-url]: https://travis-ci.org/Flet/clockmoji\n\nGet an emoji clock representation of the current time.\n\nInspired by [moonmoji](https://www.npmjs.com/package/moonmoji), [mooon](https://github.com/bcomnes/mooon) and the [oh-my-zsh emoji-clock plugin](https://github.com/robbyrussell/oh-my-zsh/blob/master/plugins/emoji-clock/emoji-clock.plugin.zsh)\n\n## Install\n\nTo use as a command:\n```\nnpm install -g clockmoji\n```\n\nTo use in JS:\n```\nnpm install --save clockmoji\n```\n\n## Usage\n\n### Command Line Usage:\n\n```bash\ndate\nTue May 26 18:19:10 CDT 2015\n\n# no arguments will return the current time\nclockmoji\n🕡\n\n# Pass a time in the format mm:ss\nclockmoji 10:00\n🕙\n\n# Military time supported\nclockmoji 14:00\n🕑\n\n# any arbitrary time works -- rounds down if its less than :15\nclockmoji 12:04\n🕛\n\n# rounds up if the minutes are :15\nclockmoji 12:24\n🕧\n\n# supports piping\necho 6:30 | clockmoji\n🕡\n\n# invalid time returns ⚠\nclockmoji 9999\n⚠\n```\n\n### JavaScript Usage:\n\n```js\nvar clockmoji = require('clockmoji')\n\nconsole.log(clockmoji())\nconsole.log(clockmoji('12:00'))\nconsole.log(clockmoji('18:30'))\n```\n\n### Stay Prompt while at the prompt\nOnce installed globally, `clockmoji` can be used to keep time on your bash/zsh prompt!\n\nExample:\nAdd this to your bash config (`.bashrc`) to prefix your prompt with the current time!\n\n```bash\nPS1='$(clockmoji)'\\ $PS1; export PS1;\n```\n\nOr if you use the excellent [pure](https://github.com/sindresorhus/pure) prompt with zsh, add this to your `.zshrc`\n```bash\nPURE_PROMPT_SYMBOL='$(clockmoji)'\\ ❯\n```\n\n## FAQ\n\n### I don't see any emoji on my command line, what should I do?\nIf you're a linux user, you may need to install a special font in order for them to work. Here are a few ways to do it:\n\n- Ubuntu: `sudo apt-get install ttf-ancient-fonts`\n- Fedora: `yum install gdouros-symbola-fonts`\n- Others: Download and install the Symbola 7.21 font from [here](http://users.teilar.gr/~g1951d/)\n\nMore Info https://www.kirsle.net/blog/entry/make-emoji-work-in-linux\n\n## Contributing\n\nContributions welcome! Please read the [contributing guidelines](CONTRIBUTING.md) first.\n\n## License\n\n[ISC](LICENSE.md)\n",
+            "maintainers": [
+                {
+                    "name": "flet",
+                    "email": "flettre@gmail.com"
+                }
+            ],
+            "time": {
+                "modified": "2015-11-17T03:44:48.623Z",
+                "created": "2015-05-26T23:37:07.371Z",
+                "1.0.0": "2015-05-26T23:37:07.371Z",
+                "1.0.1": "2015-05-26T23:42:31.263Z",
+                "1.0.2": "2015-05-27T02:03:51.757Z",
+                "1.0.3": "2015-10-19T03:36:50.768Z",
+                "1.0.4": "2015-11-17T03:44:48.623Z"
+            },
+            "homepage": "https://github.com/Flet/clockmoji",
+            "keywords": [
+                "emoji",
+                "clock",
+                "command",
+                "line"
+            ],
+            "repository": {
+                "type": "git",
+                "url": "git+https://github.com/Flet/clockmoji.git"
+            },
+            "author": {
+                "name": "Dan Flettre",
+                "email": "fletd01@yahoo.com"
+            },
+            "bugs": {
+                "url": "https://github.com/Flet/clockmoji/issues"
+            },
+            "license": "ISC",
+            "readmeFilename": "README.md",
+            "users": {
+                "bret": true
+            },
+            "_attachments": {}
+        },
+        "headers": {
+            "server": "CouchDB/1.5.0 (Erlang OTP/R16B03)",
+            "etag": "\"8DEGRS18ILIFXKAQ6V87JNK8H\"",
+            "content-type": "application/json",
+            "cache-control": "max-age=300",
+            "content-length": "8910",
+            "accept-ranges": "bytes",
+            "date": "Wed, 10 Feb 2016 21:32:41 GMT",
+            "via": "1.1 varnish",
+            "age": "46",
+            "x-served-by": "cache-dfw1833-DFW",
+            "x-cache": "HIT",
+            "x-cache-hits": "4",
+            "x-timer": "S1455139961.834792,VS0,VE0",
+            "vary": "Accept",
+            "connection": "close"
+        }
+    }
+]
