@@ -11,7 +11,7 @@
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
 
-Automatically record and playback HTTP calls for each tape test.
+Automatically record and playback HTTP calls for each tape test. This package is really just a decorator that wraps each test individual test with nock's [Nock Back](https://github.com/pgte/nock#nock-back) feature. This helps avoid the all `nockBack` wrapping code which can make tests less clear.
 
 ## Install
 
@@ -23,10 +23,57 @@ npm install tape-nock
 
 ```js
 var path = require('path')
-var tapeNock = require('tape-nock', {
+var tape = require('tape') // still need to require tape
+var tapeNock = require('tape-nock')
+
+// call tapeNock with tape and an options object
+var test = tapeNock(tape, {
   fixtures: path.join(__dirname, 'fixtures'),
   mode: 'dryrun' // this is the default mode
 })
+```
+
+Now just write your tape tests as usual:
+```js
+var request = require('request')
+
+test('do it live on the internet', function(t) {
+  request.get('https://registry.npmjs.org', function (err, res) {
+    t.error(err)
+    t.ok(res)
+    t.end()
+})
+```
+in `dryrun` mode, the above test will go to the internet and nothing will be recorded.
+
+Once your tests are perfected, Create fixture files by using the `record` mode. This captures all HTTP calls per test and saves it to the `fixtures` directory.
+
+To record, set the `NOCK_BACK_MODE` environment variable:
+```bash
+NODE_BACK_MODE=record npm test
+```
+...or do it programatically via the `tape-nock` options object:
+```js
+var test = tapeNock(tape, {
+  fixtures: path.join(__dirname, 'fixtures'),
+  mode: 'record' // record mode!
+})
+```
+A new file called `do it live on the internet.json` will be created in the `fixtures` directory. It will contain an array of HTTP calls that were made during the test. Each test will have its own JSON.
+
+Once a fixture exists for a test, it will be used every time in `dryrun` mode. To re-record, you'll need to delete the JSON file.
+
+To make this easier, add scripts to your `package.json` for easy recording/running:
+```js
+{
+  "scripts" {
+    "test": "tape test/*js"
+    "test:record": "NOCK_BACK_MODE=record npm test",
+    "test:wild": "NOCK_BACK_MODE=wild npm test",
+    "test:lockdown": "NOCK_BACK_MODE=lockdown npm test"
+    "test:overwrite": "rm test/fixtures/*.json && npm run test:record"
+  }
+}
 ```
 
 Use the `NOCK_BACK_MODE` environment variable ([details](https://github.com/pgte/nock#modes)) to control the mode of nockBack.
