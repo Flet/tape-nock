@@ -24,7 +24,7 @@ function tapeNockFactory (tapeTest, nockOpts) {
 
     var emitter = tapeTest(desc, opts_, fn_)
     emitter.once('prerun', function () {
-      nockBack(filename, function (nockDone) {
+      nockBack(filename, opts_, function (nockDone) {
         emitter.once('end', function () {
           nockDone()
         })

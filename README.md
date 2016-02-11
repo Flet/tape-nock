@@ -84,6 +84,26 @@ Here is a recap
 - **record:** use recorded nocks, record new nocks
 - **lockdown:** use recorded nocks, disables all http calls even when not nocked, doesn't record
 
+### Nock Back options
+Its also possible to pass [nockBack options](https://github.com/pgte/nock#options-1) through tape's options object.
+
+This is helpful for doing `filteringPath` or `filteringRequestBody` (check out the [PROTIP](https://github.com/pgte/nock#protip)... that can be done in an "after" function).
+
+For Example, this test will use the `after` function passed in, which will make all "time-based-param" params in the path and replace them with 123. This will ensure time-based parameters will still be mock-able (the path in the fixture JSON will need to be manually updated to match).
+```js
+var after = function (scope) {
+  scope.filteringPath(/time-based-param=[^&]*/g, 'time-based-param=123')
+}
+
+test('pass through opts to nockback', {after: after}, function (t) {
+  request.get('http://registry.npmjs.com?time-based-param=1455231758348', function (err, resp) {
+    t.error(err)
+    t.equals(JSON.parse(resp.body).haha, 'no secrets for you', 'secrets are protected')
+    t.end()
+  })
+})
+
+```
 
 ## Contributing
 

@@ -1,0 +1,27 @@
+[
+    {
+        "scope": "http://registry.npmjs.com:80",
+        "method": "GET",
+        "path": "/?secrets=shh",
+        "body": "",
+        "status": 200,
+        "response": {
+            "haha": "no secrets for you"
+        },
+        "headers": {
+            "server": "CouchDB/1.5.0 (Erlang OTP/R16B03)",
+            "content-type": "application/json",
+            "cache-control": "max-age=300",
+            "content-length": "261",
+            "accept-ranges": "bytes",
+            "date": "Thu, 11 Feb 2016 20:08:28 GMT",
+            "via": "1.1 varnish",
+            "x-served-by": "cache-ord1731-ORD",
+            "x-cache": "MISS",
+            "x-cache-hits": "0",
+            "x-timer": "S1455221308.585178,VS0,VE37",
+            "connection": "close",
+            "age": "13"
+        }
+    }
+]
