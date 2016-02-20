@@ -70,7 +70,7 @@ To make this easier, add scripts to your `package.json` for easy recording/runni
     "test": "tape test/*js"
     "test:record": "NOCK_BACK_MODE=record npm test",
     "test:wild": "NOCK_BACK_MODE=wild npm test",
-    "test:lockdown": "NOCK_BACK_MODE=lockdown npm test"
+    "test:lockdown": "NOCK_BACK_MODE=lockdown npm test",
     "test:overwrite": "rm test/fixtures/*.json && npm run test:record"
   }
 }
