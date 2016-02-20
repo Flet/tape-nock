@@ -16,7 +16,7 @@ Automatically record and playback HTTP calls for each tape test. This package is
 ## Install
 
 ```
-npm install tape-nock
+npm install tape-nock --save-dev
 ```
 
 ## Usage
