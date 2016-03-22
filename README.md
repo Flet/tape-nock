@@ -76,6 +76,37 @@ To make this easier, add scripts to your `package.json` for easy recording/runni
 }
 ```
 
+### Can still mock things
+It is also possible to manually mock at the same time so a request NEVER hits a URL.
+
+Just get a copy of nock from `tape-nock` via `.nock` and use it:
+```js
+var tape = require('tape')
+var test = require('../')(tape, {
+  fixtures: path.join(__dirname, 'fixtures')
+})
+
+var request = require('request')
+test('able to get a copy of nock from test.nock and use it', function (t) {
+  // get a copy of nock
+  var nock = test.nock
+
+  // use it to mock a URL. This mock will live even if NOCK_BACK_MODE=wild
+  nock('http://registry.npmjs.org').get('/clockmoji').reply(200, {'yep': 'it works'})
+
+  request.get('http://registry.npmjs.org/clockmoji', process)
+
+  function process (err, resp) {
+    t.error(err, 'no error')
+    t.equals(JSON.parse(resp.body).yep, 'it works', 'able to mock directly with nock instance')
+    t.end()
+  }
+})
+
+```
+
+
+### NOCK_BACK_MODE
 Use the `NOCK_BACK_MODE` environment variable ([details](https://github.com/pgte/nock#modes)) to control the mode of nockBack.
 
 Here is a recap

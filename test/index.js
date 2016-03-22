@@ -48,3 +48,17 @@ test('pass through opts to nockback', {after: after}, function (t) {
     t.end()
   })
 })
+
+test('able to get a copy of nock from test.nock and use it', function (t) {
+  var nock = test.nock
+
+  nock('http://registry.npmjs.org').get('/clockmoji').reply(200, {'yep': 'it works'})
+
+  request.get('http://registry.npmjs.org/clockmoji', process)
+
+  function process (err, resp) {
+    t.error(err, 'no error')
+    t.equals(JSON.parse(resp.body).yep, 'it works', 'able to mock directly with nock instance')
+    t.end()
+  }
+})

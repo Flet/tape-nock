@@ -37,5 +37,8 @@ function tapeNockFactory (tapeTest, nockOpts) {
     if (typeof tapeTest[key] !== 'function') return
     testWithNock[key] = tapeTest[key]
   })
+
+  testWithNock.nock = nock
+
   return testWithNock
 }
