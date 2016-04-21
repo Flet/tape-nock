@@ -50,7 +50,7 @@ Once your tests are perfected, Create fixture files by using the `record` mode. 
 
 To record, set the `NOCK_BACK_MODE` environment variable:
 ```bash
-NODE_BACK_MODE=record npm test
+NOCK_BACK_MODE=record npm test
 ```
 ...or do it programatically via the `tape-nock` options object:
 ```js
