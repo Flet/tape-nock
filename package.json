@@ -34,5 +34,6 @@
   "dependencies": {
     "nock": "^7.0.2",
     "sanitize-filename": "^1.5.3"
-  }
+  },
+  "typings": "index.d.ts"
 }
