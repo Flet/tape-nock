@@ -32,6 +32,8 @@
     "test": "tape test/*.js | tap-spec && standard"
   },
   "dependencies": {
+    "@types/nock": "^0.54.30",
+    "@types/tape": "^4.2.27",
     "nock": "^7.0.2",
     "sanitize-filename": "^1.5.3"
   },
