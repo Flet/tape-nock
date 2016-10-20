@@ -11,7 +11,8 @@ function tapeNockFactory (tapeTest, nockOpts) {
 
   var testnames = []
 
-  function testTestWithNock(fn = tapeTest) {
+  function testTestWithNock (fn) {
+    fn = fn || tapeTest
     return function testWithNock (desc, opts_, fn_) {
       var sanitized = sanitizeFilename(desc)
       if (sanitized.length < 1) sanitized = 'fixture'
@@ -34,7 +35,7 @@ function tapeNockFactory (tapeTest, nockOpts) {
       return emitter
     }
   }
-  
+
   var testWithNock = testTestWithNock()
 
   Object.keys(tapeTest).forEach(function (key) {
@@ -43,7 +44,7 @@ function tapeNockFactory (tapeTest, nockOpts) {
   })
 
   testWithNock.nock = nock
-  
+
   testWithNock.only = testTestWithNock(tapeTest.only)
 
   return testWithNock
