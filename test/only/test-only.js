@@ -7,18 +7,16 @@ var test = require('../..')(tape, {
 
 var request = require('request')
 
-test.only('hello world', function (t) {
+test('this should not run', function (t) {
+  t.fail('this should never run')
+})
+
+test.only('test only - only this test should run', function (t) {
   request.get('http://registry.npmjs.org', process)
 
   function process (err, resp) {
     t.error(err, 'no error')
     t.ok(resp)
-
-    test('get clockmoji - live', function (b) {
-      t.fail(b)
-      b.end()
-    })
-
     t.end()
   }
 })
