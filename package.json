@@ -29,7 +29,9 @@
     "url": "https://github.com/Flet/tape-nock.git"
   },
   "scripts": {
-    "test": "tape test/*.js | tap-spec && standard"
+    "test": "npm run test:generic && npm run test:only && standard",
+    "test:generic": "tape test/*.js | tap-spec",
+    "test:only": "tape test/only/*.js | tap-spec"
   },
   "dependencies": {
     "@types/nock": "^0.54.30",
