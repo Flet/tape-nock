@@ -13,8 +13,10 @@ function tapeNockFactory (tapeTest, nockOpts) {
 
   function testTestWithNock (fn) {
     fn = fn || tapeTest
-    return function testWithNock (desc, opts_, fn_) {
-      var sanitized = sanitizeFilename(desc)
+    return function testWithNock (_name, _opts, _cb) {
+      var args = getTestArgs(_name, _opts, _cb)
+
+      var sanitized = sanitizeFilename(args.name)
       if (sanitized.length < 1) sanitized = 'fixture'
 
       var filename = sanitized + '_.json'
@@ -24,9 +26,9 @@ function tapeNockFactory (tapeTest, nockOpts) {
       }
       testnames.push(filename)
 
-      var emitter = fn(desc, opts_, fn_)
+      var emitter = fn(args.name, args.opts, args.cb)
       emitter.once('prerun', function () {
-        nockBack(filename, opts_, function (nockDone) {
+        nockBack(filename, args.opts, function (nockDone) {
           emitter.once('end', function () {
             nockDone()
           })
@@ -48,4 +50,23 @@ function tapeNockFactory (tapeTest, nockOpts) {
   testWithNock.only = testTestWithNock(tapeTest.only)
 
   return testWithNock
+}
+
+var getTestArgs = function (name_, opts_, cb_) {
+  var name = '(anonymous)'
+  var opts = {}
+  var cb
+
+  for (var i = 0; i < arguments.length; i++) {
+    var arg = arguments[i]
+    var t = typeof arg
+    if (t === 'string') {
+      name = arg
+    } else if (t === 'object') {
+      opts = arg || opts
+    } else if (t === 'function') {
+      cb = arg
+    }
+  }
+  return { name: name, opts: opts, cb: cb }
 }
