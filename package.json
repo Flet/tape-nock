@@ -39,5 +39,8 @@
     "nock": "^9.0.9",
     "sanitize-filename": "^1.5.3"
   },
+  "contributors": [
+    "Arandjel Sarenac <arandjel.sarenac@gmail.com>"
+  ],
   "typings": "index.d.ts"
 }
