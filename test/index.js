@@ -1,9 +1,7 @@
-var path = require('path')
+//
 var tape = require('tape')
 
-var test = require('../')(tape, {
-  fixtures: path.join(__dirname, 'fixtures')
-})
+var test = require('../')(tape)
 
 var request = require('request')
 

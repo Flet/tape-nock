@@ -2,11 +2,12 @@
 module.exports = tapeNockFactory
 var nock = require('nock')
 var sanitizeFilename = require('sanitize-filename')
+var path = require('path')
 
 function tapeNockFactory (tapeTest, nockOpts) {
   var nockBack = nock.back
-
-  nockBack.fixtures = nockOpts.fixtures
+  nockOpts = nockOpts || {}
+  nockBack.fixtures = nockOpts.fixtures || path.join(path.dirname(module.parent.filename), 'fixtures')
   if (nockOpts.mode) nockBack.setMode(nockOpts.mode)
 
   var testnames = []
@@ -17,7 +18,7 @@ function tapeNockFactory (tapeTest, nockOpts) {
       var args = getTestArgs(_name, _opts, _cb)
 
       var sanitized = sanitizeFilename(args.name)
-      if (sanitized.length < 1) sanitized = 'fixture'
+      if (sanitized.length < 1) sanitized = 'fixtures'
 
       var filename = sanitized + '_.json'
       if (testnames.indexOf(filename) > -1) {

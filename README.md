@@ -27,8 +27,8 @@ var tape = require('tape') // still need to require tape
 var tapeNock = require('tape-nock')
 
 // call tapeNock with tape and an options object
-var test = tapeNock(tape, {
-  fixtures: path.join(__dirname, 'fixtures'),
+var test = tapeNock(tape, { //options object to be passed to nock, not required
+  fixtures: path.join(__dirname, 'fixtures'), // this is the default path
   mode: 'dryrun' // this is the default mode
 })
 ```
@@ -82,8 +82,9 @@ It is also possible to manually mock at the same time so a request NEVER hits a 
 Just get a copy of nock from `tape-nock` via `.nock` and use it:
 ```js
 var tape = require('tape')
-var test = require('../')(tape, {
-  fixtures: path.join(__dirname, 'fixtures')
+var tapeNock = require('tape-nock')
+var test = tapeNock(tape, {
+  fixtures: path.join(__dirname, 'fixtures') //defaults to this path
 })
 
 var request = require('request')
