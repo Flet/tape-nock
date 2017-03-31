@@ -3,6 +3,7 @@
 [![npm][npm-image]][npm-url]
 [![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]
+[![Package Quality][pack-quality-svg]][pack-quality-url]
 
 [npm-image]: https://img.shields.io/npm/v/tape-nock.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/tape-nock
@@ -10,6 +11,8 @@
 [travis-url]: https://travis-ci.org/Flet/tape-nock
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
 [standard-url]: http://npm.im/standard
+[pack-quality-url]: http://packagequality.com/#?package=tape-nock
+[pack-quality-svg]: http://npm.packagequality.com/shield/tape-nock.svg
 
 Automatically record and playback HTTP calls for each tape test. This package is really just a decorator that wraps each test individual test with nock's [Nock Back](https://github.com/pgte/nock#nock-back) feature. This helps avoid the all `nockBack` wrapping code which can make tests less clear.
 
