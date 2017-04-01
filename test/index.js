@@ -25,6 +25,13 @@ test('get clockmoji - live', function (t) {
   }
 })
 
+test('duplicate test name throws', function (t) {
+  t.throws(function () {
+    test('get clockmoji - live', function () {})
+  }, 'should throw')
+  t.end()
+})
+
 test('get clockmoji - fixture with modified name', function (t) {
   request.get('http://registry.npmjs.org/clockmoji', process)
 
@@ -39,7 +46,7 @@ var after = function (scope) {
   scope.filteringPath(/secrets=[^&]*/g, 'secrets=shh')
 }
 
-test('pass through opts to nockback', {after: after}, function (t) {
+test('pass through opts to nockback', { after: after }, function (t) {
   request.get('http://registry.npmjs.com?secrets=omg-secrets', function (err, resp) {
     t.error(err)
     t.equals(JSON.parse(resp.body).haha, 'no secrets for you', 'secrets are protected')
@@ -50,7 +57,7 @@ test('pass through opts to nockback', {after: after}, function (t) {
 test('able to get a copy of nock from test.nock and use it', function (t) {
   var nock = test.nock
 
-  nock('http://registry.npmjs.org').get('/clockmoji').reply(200, {'yep': 'it works'})
+  nock('http://registry.npmjs.org').get('/clockmoji').reply(200, { 'yep': 'it works' })
 
   request.get('http://registry.npmjs.org/clockmoji', process)
 
