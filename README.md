@@ -5,7 +5,6 @@
 [![standard][standard-image]][standard-url]
 [![Package Quality][pack-quality-svg]][pack-quality-url]
 [![Coverage Status - Master][coveralls-svg-branch]][coveralls-branch]
-[![Coverage Status - this branch][coveralls-svg-this]][coveralls-this]
 
 
 [npm-image]: https://img.shields.io/npm/v/tape-nock.svg?style=flat-square
@@ -18,8 +17,7 @@
 [pack-quality-svg]: http://npm.packagequality.com/shield/tape-nock.svg
 [coveralls-svg-branch]: https://coveralls.io/repos/github/Flet/tape-nock/badge.svg?branch=master
 [coveralls-branch]: https://coveralls.io/github/Flet/tape-nock?branch=master
-[coveralls-svg-this]: https://coveralls.io/repos/github/Flet/tape-nock/badge.svg?branch=scripts-fix
-[coveralls-this]: https://coveralls.io/github/Flet/tape-nock?branch=scripts-fix
+
 Automatically record and playback HTTP calls for each tape test. This package is really just a decorator that wraps each test individual test with nock's [Nock Back](https://github.com/pgte/nock#nock-back) feature. This helps avoid the all `nockBack` wrapping code which can make tests less clear.
 
 ## Install
