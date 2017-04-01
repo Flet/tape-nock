@@ -4,8 +4,7 @@
 [![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]
 [![Package Quality][pack-quality-svg]][pack-quality-url]
-[![Coverage Status][coveralls-svg-branch]][coveralls-branch]
-
+[![Coverage Status - Master][coveralls-svg-branch]][coveralls-branch]
 
 
 [npm-image]: https://img.shields.io/npm/v/tape-nock.svg?style=flat-square
