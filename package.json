@@ -31,12 +31,12 @@
     "url": "https://github.com/Flet/tape-nock.git"
   },
   "scripts": {
-    "oldTest": "npm run test:generic && npm run test:only && standard",
+    "test": "npm run test:generic && npm run test:only && standard",
     "test:generic": "tape test/*.js | tap-spec",
     "test:only": "tape test/only/*.js | tap-spec",
     "test:generic:n": "nyc tape test/*.js",
-    "test:only:n": "tape test/only/*.js",
-    "test": "npm run test:generic:n && npm run test:only:n && nyc report --reporter=text-lcov | coveralls"
+    "test:only:n": "nyc tape test/only/*.js",
+    "coverage": "npm run test:generic:n && npm run test:only:n && nyc report --reporter=text-lcov"
   },
   "dependencies": {
     "@types/nock": "^0.54.30",
