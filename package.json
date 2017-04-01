@@ -11,7 +11,8 @@
     "request": "^2.69.0",
     "standard": "*",
     "tap-spec": "^4.0.2",
-    "tape": "^4.0.0"
+    "tape": "^4.0.0",
+    "nyc": "^10.2.0"
   },
   "homepage": "https://github.com/Flet/tape-nock",
   "keywords": [
@@ -35,7 +36,7 @@
     "test:only": "tape test/only/*.js | tap-spec",
     "test:generic:n": "nyc tape test/*.js",
     "test:only:n": "tape test/only/*.js",
-    "coverage" : "npm run test:generic:n && npm run test:only:n && nyc report --reporter=text-lcov"
+    "coverage" : "npm run test:generic:n && npm run test:only:n && nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
     "@types/nock": "^0.54.30",
