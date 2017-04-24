@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## next
+## 1.6.0 2017-04-24
 * New feature: `defaultTestOptons` - set *before*, *after*, and *afterRecord* functions for all tests when `tapeNock` is defined.
 * Added example of using `tape-nock` with `supertest` to the README.
 * expose `nock` via `tapeNock.nock`
