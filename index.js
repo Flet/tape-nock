@@ -10,6 +10,8 @@ function tapeNockFactory (tapeTest, nockOpts) {
   nockBack.fixtures = nockOpts.fixtures || path.join(path.dirname(module.parent.filename), 'fixtures')
   if (nockOpts.mode) nockBack.setMode(nockOpts.mode)
 
+  var defaultTestOptions = nockOpts.defaultTestOptions || {}
+
   var testnames = []
 
   function testTestWithNock (fn) {
@@ -29,7 +31,7 @@ function tapeNockFactory (tapeTest, nockOpts) {
 
       var emitter = fn(args.name, args.opts, args.cb)
       emitter.once('prerun', function () {
-        nockBack(filename, args.opts, function (nockDone) {
+        nockBack(filename, Object.assign({}, defaultTestOptions, args.opts), function (nockDone) {
           emitter.once('end', function () {
             nockDone()
           })
@@ -52,6 +54,8 @@ function tapeNockFactory (tapeTest, nockOpts) {
 
   return testWithNock
 }
+
+tapeNockFactory.nock = nock
 
 var getTestArgs = function (name_, opts_, cb_) {
   var name = '(anonymous)'
