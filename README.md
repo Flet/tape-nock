@@ -37,8 +37,19 @@ var tapeNock = require('tape-nock')
 var test = tapeNock(tape, { //options object to be passed to nock, not required
   fixtures: path.join(__dirname, 'fixtures'), // this is the default path
   mode: 'dryrun' // this is the default mode
+  defaultTestOptions: { // optionally provide default options to nockBack for each test
+    before: function () {
+      console.log('a preprocessing function, gets called before nock.define')
+    },
+    after: function () {
+      console.log('a postprocessing function, gets called after nock.define')
+    }
+  }
 })
 ```
+
+(see [nockBack test options](https://github.com/node-nock/nock#options-1) for more information on *before*, *after*, and *afterRecord* functions used in `defaultTestOptions`)
+
 
 Now just write your tape tests as usual:
 ```js
@@ -141,6 +152,80 @@ test('pass through opts to nockback', {after: after}, function (t) {
     t.end()
   })
 })
+
+```
+
+### Using supertest with tape-nock
+
+Since nockBack will mock all HTTP requests, using [supertest](https://github.com/visionmedia/supertest) can be tricky. Here is an example of how to avoid mocking/recording local connections when using `supertest`.
+
+Here is our application. It simply hits http://httpbin.org/get which echos info back. We want to have nockBack record/mock the httpbin request but still allow `supertest` http requests to 127.0.0.1 to pass through for all tests. This is done by leveraging the `defaultTestOptions`.
+
+**app.js**
+```js
+const express = require('express')
+const request = require('superagent')
+
+var app = express()
+
+app.get('/myapp/version', function (req, res) {
+  superagent
+    .get('http://httpbin.org/get')
+    .end(function (err, response) {
+      res.status(200).json({
+        version: '0.1.0',
+        url: response.body.url
+      })
+    })
+})
+
+module.exports = app
+```
+
+**test.js**
+```js
+const supertest = require('supertest');
+const app = require('../app.js');
+
+const tape = require('tape');
+const tapeNock = require('tape-nock');
+const nock = tapeNock.nock;
+
+const opts = {
+  // after recording the fixtures, remove any scopes that hit 127.0.0.1
+  // this is not necessary with our before function below, but it makes it a bit cleaner.
+  afterRecord: function (scopes) {
+    var localhost = /http:\/\/127\.0\.0\.1.*/;
+    scopes = scopes.filter(function (s) {
+      return !localhost.test(s.scope);
+    });
+
+    return scopes;
+  },
+  before: function () {
+    // allow connections to 127.0.0.1 even when NOCK_BACK_MODE=lockdown
+    nock.enableNetConnect('127.0.0.1');
+  }
+};
+
+// call tapeNock with tape and an options object
+const test = tapeNock(tape, { defaultTestOptions: opts });
+
+// note that we're passing in test.options here
+// which has our special "afterRecord" and "before" functions
+test('hit version url', function (t) {
+  supertest(app)
+    .get('/myapp/version')
+    .expect(200, {
+      url: 'http://httpbin.org/get',
+      version: '0.1.0'
+    })
+    .end(function (err, res) {
+      t.error(err, 'no error');
+      t.equals(res.body.url, 'http://httpbin.org/get', 'url is correct');
+      t.end();
+    });
+});
 
 ```
 
