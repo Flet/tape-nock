@@ -7,6 +7,8 @@
     "url": "https://github.com/Flet/tape-nock/issues"
   },
   "devDependencies": {
+    "axios": "^0.17.1",
+    "blue-tape": "^1.0.0",
     "coveralls": "^2.13.0",
     "nyc": "^10.2.0",
     "request": "^2.69.0",
