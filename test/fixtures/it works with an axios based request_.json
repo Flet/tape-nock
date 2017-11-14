@@ -1,0 +1,62 @@
+[
+    {
+        "scope": "http://registry.npmjs.org:80",
+        "method": "get",
+        "path": "/",
+        "body": "",
+        "status": 200,
+        "response": {
+            "db_name": "registry",
+            "doc_count": 715027,
+            "doc_del_count": 344,
+            "update_seq": 725626,
+            "purge_seq": 0,
+            "compact_running": false,
+            "disk_size": 5895479523,
+            "other": {
+                "data_size": 17587744400
+            },
+            "data_size": 4075458684,
+            "sizes": {
+                "file": 5895479523,
+                "active": 4075458684,
+                "external": 17587744400
+            },
+            "instance_start_time": "1510677724009214",
+            "disk_format_version": 6,
+            "committed_update_seq": 725626,
+            "compacted_seq": 0,
+            "uuid": "394cafa300c4e4a5a9be8a9e16f637de"
+        },
+        "rawHeaders": [
+            "server",
+            "CouchDB/2.1.1 (Erlang OTP/R16B03)",
+            "Content-Type",
+            "application/json",
+            "Cache-Control",
+            "max-age=300",
+            "Content-Length",
+            "425",
+            "Accept-Ranges",
+            "bytes",
+            "Date",
+            "Tue, 14 Nov 2017 22:31:30 GMT",
+            "Via",
+            "1.1 varnish",
+            "Age",
+            "88",
+            "Connection",
+            "close",
+            "X-Served-By",
+            "cache-mdw17351-MDW",
+            "X-Cache",
+            "HIT",
+            "X-Cache-Hits",
+            "1",
+            "X-Timer",
+            "S1510698691.588226,VS0,VE0",
+            "Vary",
+            "Accept-Encoding, Accept"
+        ]
+    }
+]
