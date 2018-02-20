@@ -36,7 +36,7 @@ var tapeNock = require('tape-nock')
 // call tapeNock with tape and an options object
 var test = tapeNock(tape, { //options object to be passed to nock, not required
   fixtures: path.join(__dirname, 'fixtures'), // this is the default path
-  mode: 'dryrun' // this is the default mode
+  mode: 'dryrun', // this is the default mode
   defaultTestOptions: { // optionally provide default options to nockBack for each test
     before: function () {
       console.log('a preprocessing function, gets called before nock.define')
