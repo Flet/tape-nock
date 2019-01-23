@@ -1,6 +1,7 @@
 # tape-nock
 
 [![npm][npm-image]][npm-url]
+[![npm-next][npm-next]][npm-url]
 [![travis][travis-image]][travis-url]
 [![standard][standard-image]][standard-url]
 [![Package Quality][pack-quality-image]][pack-quality-url]
@@ -8,6 +9,7 @@
 
 
 [npm-image]: https://img.shields.io/npm/v/tape-nock.svg?style=flat-square
+[npm-next]: https://img.shields.io/npm/v/tape-nock/next.svg?style=flat-square
 [npm-url]: https://www.npmjs.com/package/tape-nock
 [travis-image]: https://img.shields.io/travis/Flet/tape-nock.svg?style=flat-square
 [travis-url]: https://travis-ci.org/Flet/tape-nock
