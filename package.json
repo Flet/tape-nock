@@ -9,11 +9,11 @@
   "devDependencies": {
     "axios": "^0.17.1",
     "blue-tape": "^1.0.0",
-    "coveralls": "^2.13.0",
-    "nyc": "^10.2.0",
+    "coveralls": "^3.0.2",
+    "nyc": "^13.1.0",
     "request": "^2.69.0",
     "standard": "*",
-    "tap-spec": "^4.0.2",
+    "tap-spec": "^5.0.0",
     "tape": "^4.0.0"
   },
   "homepage": "https://github.com/Flet/tape-nock",
@@ -39,9 +39,9 @@
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
   },
   "dependencies": {
-    "@types/nock": "^0.54.30",
-    "@types/tape": "^4.2.27",
-    "nock": "^9.0.9",
+    "@types/nock": "^9.3.1",
+    "@types/tape": "^4.2.33",
+    "nock": "^10.0.6",
     "sanitize-filename": "^1.5.3"
   },
   "contributors": [
