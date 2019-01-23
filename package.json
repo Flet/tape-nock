@@ -10,6 +10,7 @@
     "axios": "^0.17.1",
     "blue-tape": "^1.0.0",
     "coveralls": "^3.0.2",
+    "np": "^4.0.1",
     "nyc": "^13.1.0",
     "request": "^2.69.0",
     "standard": "*",
@@ -36,7 +37,8 @@
     "test": "npm run test:generic && npm run test:only && standard",
     "test:generic": "tape test/*.js | tap-spec",
     "test:only": "tape test/only/*.js | tap-spec",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls"
+    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
+    "publush": "np"
   },
   "dependencies": {
     "@types/nock": "^9.3.1",
