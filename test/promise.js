@@ -1,4 +1,3 @@
-
 var request = require('axios')
 
 var tape = require('tape-async')
@@ -12,12 +11,13 @@ test('it works with a plain promise', function (t) {
 })
 
 test('it works with an axios based request', function (t) {
-  return request('http://registry.npmjs.org')
-    .then(function (resp) {
-      t.equal(resp.status, 200)
-    })
+  return request('http://registry.npmjs.org').then(function (resp) {
+    t.equal(resp.status, 200)
+  })
 })
 
 function timeout (ms) {
-  return new Promise(function (resolve) { setTimeout(resolve, ms) })
+  return new Promise(function (resolve) {
+    setTimeout(resolve, ms)
+  })
 }
