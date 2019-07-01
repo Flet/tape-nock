@@ -8,14 +8,14 @@
   },
   "devDependencies": {
     "axios": "^0.19.0",
-    "tape-async": "^2.3.0",
     "coveralls": "^3.0.4",
     "np": "^5.0.3",
     "nyc": "^14.1.1",
     "request": "^2.88.0",
     "standard": "12.0.1",
     "tap-spec": "^5.0.0",
-    "tape": "^4.11.0"
+    "tape": "^4.11.0",
+    "tape-async": "^2.3.0"
   },
   "homepage": "https://github.com/Flet/tape-nock",
   "keywords": [
@@ -38,7 +38,9 @@
     "test:generic": "tape test/*.js | tap-spec",
     "test:only": "tape test/only/*.js | tap-spec",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "publish": "np"
+    "publish:next": "np --any-branch --tag=next --no-cleanup",
+    "publish:dryrun": "np --no-publish --no-cleanup",
+    "publish": "np --no-cleanup"
   },
   "dependencies": {
     "@types/nock": "^10.0.3",
