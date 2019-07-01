@@ -1,7 +1,7 @@
 {
   "name": "tape-nock",
   "description": "Automatically record and playback HTTP calls for each tape test.",
-  "version": "1.6.2",
+  "version": "1.6.3",
   "author": "Dan Flettre <fletd01@yahoo.com>",
   "bugs": {
     "url": "https://github.com/Flet/tape-nock/issues"
@@ -49,11 +49,16 @@
   "engines": {
     "node": ">= 6"
   },
-  "contributors": ["Arandjel Sarenac <arandjel.sarenac@gmail.com>"],
+  "contributors": [
+    "Arandjel Sarenac <arandjel.sarenac@gmail.com>"
+  ],
   "typings": "index.d.ts",
   "config": {
     "nyc": {
-      "exclude": ["node_modules/**", "test/**"]
+      "exclude": [
+        "node_modules/**",
+        "test/**"
+      ]
     }
   }
 }
