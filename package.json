@@ -1,21 +1,21 @@
 {
   "name": "tape-nock",
   "description": "Automatically record and playback HTTP calls for each tape test.",
-  "version": "2.0.0-0",
+  "version": "2.0.0-1",
   "author": "Dan Flettre <fletd01@yahoo.com>",
   "bugs": {
     "url": "https://github.com/Flet/tape-nock/issues"
   },
   "devDependencies": {
-    "axios": "^0.18.0",
-    "blue-tape": "^1.0.0",
-    "coveralls": "^3.0.2",
-    "np": "^4.0.1",
-    "nyc": "^13.1.0",
+    "axios": "^0.19.0",
+    "tape-async": "^2.3.0",
+    "coveralls": "^3.0.4",
+    "np": "^5.0.3",
+    "nyc": "^14.1.1",
     "request": "^2.88.0",
-    "standard": "*",
+    "standard": "12.0.1",
     "tap-spec": "^5.0.0",
-    "tape": "^4.0.0"
+    "tape": "^4.11.0"
   },
   "homepage": "https://github.com/Flet/tape-nock",
   "keywords": [
@@ -38,10 +38,10 @@
     "test:generic": "tape test/*.js | tap-spec",
     "test:only": "tape test/only/*.js | tap-spec",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "publush": "np"
+    "publish": "np"
   },
   "dependencies": {
-    "@types/nock": "^9.3.1",
+    "@types/nock": "^10.0.3",
     "@types/tape": "^4.2.33",
     "nock": "^11.0.0-beta.4",
     "sanitize-filename": "^1.6.1"
