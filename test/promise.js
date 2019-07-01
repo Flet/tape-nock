@@ -1,7 +1,7 @@
 
 var request = require('axios')
 
-var tape = require('blue-tape')
+var tape = require('tape-async')
 
 var test = require('../')(tape)
 
