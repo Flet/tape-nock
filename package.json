@@ -1,14 +1,14 @@
 {
   "name": "tape-nock",
   "description": "Automatically record and playback HTTP calls for each tape test.",
-  "version": "1.6.3",
+  "version": "1.6.4",
   "author": "Dan Flettre <fletd01@yahoo.com>",
   "bugs": {
     "url": "https://github.com/Flet/tape-nock/issues"
   },
   "devDependencies": {
     "axios": "^0.19.0",
-    "coveralls": "^3.0.4",
+    "coveralls": "^3.0.7",
     "np": "^5.0.3",
     "nyc": "^14.1.1",
     "request": "^2.88.0",
@@ -38,7 +38,7 @@
     "test:generic": "tape test/*.js | tap-spec",
     "test:only": "tape test/only/*.js | tap-spec",
     "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
-    "publush": "np"
+    "publish": "np"
   },
   "dependencies": {
     "@types/nock": "^10.0.3",
