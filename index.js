@@ -1,35 +1,35 @@
 'use strict'
 module.exports = tapeNockFactory
-var nock = require('nock')
-var sanitizeFilename = require('sanitize-filename')
-var path = require('path')
+const nock = require('nock')
+const sanitizeFilename = require('sanitize-filename')
+const path = require('path')
 
 function tapeNockFactory (tapeTest, nockOpts) {
-  var nockBack = nock.back
+  const nockBack = nock.back
   nockOpts = nockOpts || {}
   nockBack.fixtures = nockOpts.fixtures || path.join(path.dirname(module.parent.filename), 'fixtures')
   if (nockOpts.mode) nockBack.setMode(nockOpts.mode)
 
-  var defaultTestOptions = nockOpts.defaultTestOptions || {}
+  const defaultTestOptions = nockOpts.defaultTestOptions || {}
 
-  var testnames = []
+  const testnames = []
 
   function testTestWithNock (fn) {
     fn = fn || tapeTest
     return function testWithNock (_name, _opts, _cb) {
-      var args = getTestArgs(_name, _opts, _cb)
+      const args = getTestArgs(_name, _opts, _cb)
 
-      var sanitized = sanitizeFilename(args.name)
+      let sanitized = sanitizeFilename(args.name)
       if (sanitized.length < 1) sanitized = 'fixtures'
 
-      var filename = sanitized + '_.json'
+      const filename = sanitized + '_.json'
       if (testnames.indexOf(filename) > -1) {
-        var mustBeUnique = 'tape-nock: Duplicate test filename: "' + filename + '". All test descriptions must be unique.'
+        const mustBeUnique = 'tape-nock: Duplicate test filename: "' + filename + '". All test descriptions must be unique.'
         throw new Error(mustBeUnique)
       }
       testnames.push(filename)
 
-      var emitter = fn(args.name, args.opts, args.cb)
+      const emitter = fn(args.name, args.opts, args.cb)
       emitter.once('prerun', function () {
         nockBack(filename, Object.assign({}, defaultTestOptions, args.opts), function (nockDone) {
           emitter.once('end', function () {
@@ -41,7 +41,7 @@ function tapeNockFactory (tapeTest, nockOpts) {
     }
   }
 
-  var testWithNock = testTestWithNock()
+  const testWithNock = testTestWithNock()
 
   Object.keys(tapeTest).forEach(function (key) {
     if (typeof tapeTest[key] !== 'function') return
@@ -57,14 +57,14 @@ function tapeNockFactory (tapeTest, nockOpts) {
 
 tapeNockFactory.nock = nock
 
-var getTestArgs = function (name_, opts_, cb_) {
-  var name = '(anonymous)'
-  var opts = {}
-  var cb
+const getTestArgs = function (name_, opts_, cb_) {
+  let name = '(anonymous)'
+  let opts = {}
+  let cb
 
-  for (var i = 0; i < arguments.length; i++) {
-    var arg = arguments[i]
-    var t = typeof arg
+  for (let i = 0; i < arguments.length; i++) {
+    const arg = arguments[i]
+    const t = typeof arg
     if (t === 'string') {
       name = arg
     } else if (t === 'object') {
@@ -73,5 +73,5 @@ var getTestArgs = function (name_, opts_, cb_) {
       cb = arg
     }
   }
-  return { name: name, opts: opts, cb: cb }
+  return { name, opts, cb }
 }

@@ -1,7 +1,7 @@
-var tape = require('tape')
-var beforeWorks = false
+const tape = require('tape')
+let beforeWorks = false
 
-var test = require('../')(tape, {
+const test = require('../')(tape, {
   defaultTestOptions: {
     before: function () {
       beforeWorks = true
@@ -9,7 +9,7 @@ var test = require('../')(tape, {
   }
 })
 
-var request = require('request')
+const request = require('request')
 
 test('hello world', function (t) {
   request.get('http://registry.npmjs.org', process)

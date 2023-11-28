@@ -1,9 +1,9 @@
 //
-var tape = require('tape')
+const tape = require('tape')
 
-var test = require('../')(tape)
+const test = require('../')(tape)
 
-var request = require('request')
+const request = require('request')
 
 test('hello world', function (t) {
   request.get('http://registry.npmjs.org', process)
@@ -42,11 +42,11 @@ test('get clockmoji - fixture with modified name', function (t) {
   }
 })
 
-var after = function (scope) {
+const after = function (scope) {
   scope.filteringPath(/secrets=[^&]*/g, 'secrets=shh')
 }
 
-test('pass through opts to nockback', { after: after }, function (t) {
+test('pass through opts to nockback', { after }, function (t) {
   request.get('http://registry.npmjs.com?secrets=omg-secrets', function (err, resp) {
     t.error(err)
     t.equals(JSON.parse(resp.body).haha, 'no secrets for you', 'secrets are protected')
@@ -55,9 +55,9 @@ test('pass through opts to nockback', { after: after }, function (t) {
 })
 
 test('able to get a copy of nock from test.nock and use it', function (t) {
-  var nock = test.nock
+  const nock = test.nock
 
-  nock('http://registry.npmjs.org').get('/clockmoji').reply(200, { 'yep': 'it works' })
+  nock('http://registry.npmjs.org').get('/clockmoji').reply(200, { yep: 'it works' })
 
   request.get('http://registry.npmjs.org/clockmoji', process)
 

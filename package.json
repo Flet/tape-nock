@@ -7,14 +7,12 @@
     "url": "https://github.com/Flet/tape-nock/issues"
   },
   "devDependencies": {
-    "axios": "^0.19.0",
-    "coveralls": "^3.0.7",
-    "np": "^5.0.3",
-    "nyc": "^14.1.1",
-    "request": "^2.88.0",
-    "standard": "12.0.1",
+    "axios": "^1.6.2",
+    "np": "^9.0.0",
+    "request": "^2.88.2",
+    "standard": "17.1.0",
     "tap-spec": "^5.0.0",
-    "tape": "^4.11.0",
+    "tape": "^5.7.2",
     "tape-async": "^2.3.0"
   },
   "homepage": "https://github.com/Flet/tape-nock",
@@ -37,7 +35,6 @@
     "test": "npm run test:generic && npm run test:only && standard",
     "test:generic": "tape test/*.js | tap-spec",
     "test:only": "tape test/only/*.js | tap-spec",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov | coveralls",
     "publish": "np"
   },
   "dependencies": {

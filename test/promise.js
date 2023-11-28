@@ -1,9 +1,8 @@
+const request = require('axios')
 
-var request = require('axios')
+const tape = require('tape-async')
 
-var tape = require('tape-async')
-
-var test = require('../')(tape)
+const test = require('../')(tape)
 
 test('it works with a plain promise', function (t) {
   return timeout(100).then(function () {

@@ -1,11 +1,11 @@
-var path = require('path')
-var tape = require('tape')
+const path = require('path')
+const tape = require('tape')
 
-var test = require('../..')(tape, {
+const test = require('../..')(tape, {
   fixtures: path.join(__dirname, '..', 'fixtures')
 })
 
-var request = require('request')
+const request = require('request')
 
 test('this should not run', function (t) {
   t.fail('this should never run')
